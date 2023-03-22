@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * print_alphabet_x10 - print alphabets
+ * print_alphabet - print alphabets
+ * Return: void
  */
 
-void print_alphabet_x10(void)
+void print_alphabet(void)
 {
 	int count = 0;
 	char i;
