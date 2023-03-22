@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * print_alphabet - print alphabets
- * Return: void
+ * print_alphabet - prints lowercase alphabet
+ * Return: 0
  */
 
 void print_alphabet(void)
 {
-	int count = 0;
-	char i;
+	char alpha;
 
-	while (count++ <= 9)
+	alpha = 'a';
+
+	while (alpha <= 'z')
 	{
-		for (i = 'a' ; i <= 'z' ; i++)
-			_putchar(i);
-		_putchar('\n');
+		_putchar(alpha);
+		alpha++;
 	}
+	_putchar('\n');
 }
