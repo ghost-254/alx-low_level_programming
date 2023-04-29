@@ -2,25 +2,23 @@
 ; Description: Working on writing a 64-bit program..
 ; ...in assembly that prints Hello, Holberton
 
-section .text
-	global main
+global _start
+extern printf
 
-main:
+section .data
+	message db "Hello, Holberton", 0
+	format db "%s\n", 0
+
+section .text
+_start:
 	; prepare arguments for printf function call
 	push qword message
 	push qword format
-
-	; call printf function
-	mov rax, 0
 	call printf
 
 	; clean up stack
 	add rsp, 16
 
-	; return 0
-	xor eax, eax
+	; exit program
+	mov eax, 0
 	ret
-
-section .data
-	message db "Hello, Holberton", 0
-	format db "%s\n", 0
