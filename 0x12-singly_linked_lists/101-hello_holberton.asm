@@ -1,6 +1,6 @@
-section .data
-	message db "Hello, Holberton", 0
-	format db "%s\n", 0
+; Author: Neville Otieno
+; Description: Working on writing a 64-bit program..
+; ...in assembly that prints Hello, Holberton
 
 section .text
 	global main
@@ -20,3 +20,7 @@ main:
 	; return 0
 	xor eax, eax
 	ret
+	
+section .data
+	message db "Hello, Holberton", 0
+	format db "%s\n", 0
