@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 
-/*** Author: Neville Otieno ***/
+/**** Author: Neville Otieno ****/
 /**
  * print_list - Prints all the elements of a linked list.
  * @h: The head of the linked list.
