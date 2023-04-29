@@ -10,12 +10,15 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t node_count = 0;
+	size_t node_count;
+	const list_t *current;
+
+	node_count = 0;
 
 	if (h == NULL)
 		return (0);
 
-	const list_t *current = h;
+	current = h;
 
 	do {
 		if (current->str == NULL)
