@@ -1,9 +1,10 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /* Author: Neville Otieno */
 
 /**
- * free_list - Frees a list_t list.
+ * free_list - It frees a list_t list.
  *
  * @head: A pointer to the head node of the list.
  */
