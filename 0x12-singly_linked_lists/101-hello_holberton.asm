@@ -2,16 +2,28 @@
 ; Description: Working on writing a 64-bit program..
 ; ...in assembly that prints Hello, Holberton
 
+global _start
+
 section .data
-	message db "Hello, Holberton", 0Ah, 0
+	msg db "Hello, Holberton", 0 ; Null-terminated string
+	fmt db "%s", 10, 0 ; Format string with newline and null terminator
 
 section .text
-	global main
-	extern printf
+_start:
+	; Push stack frame
+	push rbp
+	mov rbp, rsp
 
-main:
-	sub rsp, 8    ; align stack
-	push message
+	; Call printf
+	mov edi, fmt ; First argument: format string
+	mov esi, msg ; Second argument: message string
+	xor eax, eax ; Clear return value register
 	call printf
-	add rsp, 8
+
+	; Clean up stack frame
+	mov rsp, rbp
+	pop rbp
+
+	; Exit program
+	mov eax, 0
 	ret
