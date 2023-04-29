@@ -3,22 +3,27 @@
 ; ...in assembly that prints Hello, Holberton
 
 global _start
-extern printf
 
 section .data
-	message db "Hello, Holberton", 0
-	format db "%s\n", 0
+	msg db "Hello, Holberton", 0 ; Null-terminated string
+	fmt db "%s", 10, 0 ; Format string with newline and null terminator
 
 section .text
 _start:
-	; prepare arguments for printf function call
-	push qword message
-	push qword format
+	; Push stack frame
+	push rbp
+	mov rbp, rsp
+
+	; Call printf
+	mov edi, fmt ; First argument: format string
+	mov esi, msg ; Second argument: message string
+	xor eax, eax ; Clear return value register
 	call printf
 
-	; clean up stack
-	add rsp, 16
+	; Clean up stack frame
+	mov rsp, rbp
+	pop rbp
 
-	; exit program
+	; Exit program
 	mov eax, 0
 	ret
