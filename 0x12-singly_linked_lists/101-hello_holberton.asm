@@ -10,6 +10,7 @@ section .text
 	extern printf
 
 main:
+	sub rsp, 8    ; align stack
 	push message
 	call printf
 	add rsp, 8
