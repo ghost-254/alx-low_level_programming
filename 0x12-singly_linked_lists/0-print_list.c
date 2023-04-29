@@ -8,7 +8,10 @@
  *
  * Return: The number of nodes in the linked list.
  */
-size_t print_list(const list_t *h)
+size_t print_list(const list_t *h) {
+	if (h == NULL) {
+		return (0);
+    }
 {
 	size_t node_count = 0;
 	const list_t *current = h;
