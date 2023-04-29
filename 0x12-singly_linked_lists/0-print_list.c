@@ -10,11 +10,11 @@
  */
 size_t print_list(const list_t *h)
 {
+	size_t node_count = 0;
+	
 	if (h == NULL)
 		return (0);
 
-/* Traversing the linked list and print each node */
-	size_t node_count = 0;
 	const list_t *current = h;
 
 	do {
