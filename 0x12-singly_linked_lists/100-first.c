@@ -2,14 +2,19 @@
 
 /* Author: Neville Otieno */
 
-void print_before_main(void)
+void print_beat(void) __attribute__((constructor));
+
+/**
+ * print_beat - Prints a message before the main function is executed.
+ */
+void print_beat(void)
 {
-	printf("You're beat! and yet, you must allow,\n"
-	"I bore my house upon my back!\n");
+    printf("You're beat! and yet, you must allow,\n"
+           "I bore my house upon my back!\n");
 }
 
 int main(void)
 {
-	print_before_main();
-	return 0;
+    printf("This is the main function.\n");
+    return 0;
 }
