@@ -12,9 +12,3 @@ void print_beat(void)
     printf("You're beat! and yet, you must allow,\n"
            "I bore my house upon my back!\n");
 }
-
-int main(void)
-{
-    printf("This is the main function.\n");
-    return 0;
-}
